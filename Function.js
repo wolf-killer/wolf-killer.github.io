@@ -41,7 +41,7 @@ $(document).ready(function(){
 	wh = setWidth / setHeight;
 	$("#allScreen").css("height", setHeight);
 	$("#allScreen").css("width", setWidth);
-	$(".w3-container").css("max-height", setHeight-60);
+	$(".fix-height").css("max-height", setHeight-60);
 	if(wh>0.7){
 		landscape = true;
 		$('input:radio[name=alignment]').filter('[value=tableAlign]').prop('checked', true);
