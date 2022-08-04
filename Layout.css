@@ -1,7 +1,10 @@
-.w3-allerta { 
-	font-family: "Allerta Stencil", Sans-serif; 
+html, body{
+	overflow-x: hidden;
+	overflow-y: hidden;
+	font-family: 'cwTeXYen', 'Noto Sans TC', '微軟正黑體', '黑體-繁', sans-serif !important;
 }
 body {
+	position: relative;
 	background-image: url("./image/background.jpg");
 	background-repeat: no-repeat;
 	background-attachment: fixed; 
@@ -36,6 +39,8 @@ td {
 	width: 80%;
 }
 #versionSelecter{
+	overflow-y: auto;
+	overflow-x: hidden;
 	padding: 10px;
 	background-color: #55B1D6;	
 	width:80%; 

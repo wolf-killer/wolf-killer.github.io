@@ -32,13 +32,16 @@ var versionLog = "";
 var log = "";
 var wh = 0;
 var landscape = false;
+var setWidth = document.documentElement.scrollWidth;
+var setHeight = document.documentElement.scrollHeight;
 
 $(document).ready(function(){
 	$("#versionSelecter").show();
-	console.log("Available width/height: " + screen.availWidth + "*" + screen.availHeight + " || w/h: " + screen.availWidth /screen.availHeight);
-	wh = screen.availWidth /screen.availHeight;
-	$("#allScreen").css("height", screen.availHeight-30);
-	$("#allScreen").css("width", screen.availWidth);
+	console.log("Available width/height: " + setWidth + "*" + screen.availHeight + " || w/h: " + setWidth / setHeight);
+	wh = setWidth / setHeight;
+	$("#allScreen").css("height", setHeight);
+	$("#allScreen").css("width", setWidth);
+	$(".w3-container").css("max-height", setHeight-60);
 	if(wh>0.7){
 		landscape = true;
 		$('input:radio[name=alignment]').filter('[value=tableAlign]').prop('checked', true);
@@ -1215,7 +1218,7 @@ function showVersion() {
 	);
 	if(alignment == "tableAlign"){
 			//show as table
-		$("#versionDiv").css("width", "-webkit-fill-available");
+		$("#versionDiv").css("width", "100%");
 		for(var loop=1; loop<=submitTotalPlayer; loop++){
 			$("#versionDiv").append(
 			"			<div class=\"w3-container s4 m3 l2 w3-col w3-center w3-col-middle\" style=\"\"> " +
